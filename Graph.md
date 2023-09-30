@@ -30,5 +30,5 @@ Returns a List of edges(Nodes) connected to the given node
 5- size.
 Returns the total number of nodes in the graph (int)
 
-## [Code]()
-## [Test]()
+## [Code](https://github.com/ammarAltarawneh/data-structures-and-algorithms-2/blob/master/data-structures-and-algorithms-2/Graph.cs)
+## [Test](https://github.com/ammarAltarawneh/data-structures-and-algorithms-2/blob/master/data-structures-and-algorithms-Test/UnitTest1.cs)
