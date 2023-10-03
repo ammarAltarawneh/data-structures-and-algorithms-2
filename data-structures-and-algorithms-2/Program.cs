@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace data_structures_and_algorithms_2
+﻿namespace data_structures_and_algorithms_2
 {
     internal class Program
     {
@@ -20,10 +18,10 @@ namespace data_structures_and_algorithms_2
             graph.AddNode(node4.value);
             graph.AddNode(node5.value);
 
-            graph.AddEdge(node3, node2);
-            graph.AddEdge(node4, node3);
-            graph.AddEdge(node5, node3);
-            graph.AddEdge(node1, node2);
+            graph.AddEdge(node3, node2, 5);
+            graph.AddEdge(node4, node3, 7);
+            graph.AddEdge(node5, node3, 9);
+            graph.AddEdge(node1, node2, 2);
 
             foreach (var item in graph.GetNodes())
             {
@@ -32,7 +30,7 @@ namespace data_structures_and_algorithms_2
             string s = "";
             foreach (var item in graph.GetNeighbors(node3))
             {
-                s += item.value + ", ";
+                s += item.Node.value + ", ";
             }
             Console.WriteLine(s);
             Console.WriteLine(graph.Size());
@@ -40,6 +38,8 @@ namespace data_structures_and_algorithms_2
             {
                 Console.WriteLine(item.value);
             }
+
+            Console.WriteLine(Graph.BusinessTrip(graph, new string[] { "A", "E" }));
         }
     }
 }
