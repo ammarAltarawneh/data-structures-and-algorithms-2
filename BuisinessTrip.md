@@ -7,4 +7,4 @@ Write a function called business trip Arguments: graph, string array of city nam
 ## Approach & Efficiency
 BusinessTrip function time complixity is O(n)
 
-## [Code]()
+## [Code](https://github.com/ammarAltarawneh/data-structures-and-algorithms-2/blob/master/data-structures-and-algorithms-2/Graph.cs)
