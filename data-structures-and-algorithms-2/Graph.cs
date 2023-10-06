@@ -131,21 +131,44 @@ namespace data_structures_and_algorithms_2
             }
             return "$" + result;
         }
+
+        public List<Node> DepthFirst(Node startNode)
+        {
+            List<Node> visited = new List<Node>();
+            DepthFirstRecursive(startNode, visited);
+            return visited;
+        }
+
+        private void DepthFirstRecursive(Node currentNode, List<Node> visited)
+        {
+            visited.Add(currentNode);
+
+            foreach (Edge neighborEdge in GetNeighbors(currentNode))
+            {
+                Node neighborNode = neighborEdge.Node;
+                if (!visited.Contains(neighborNode))
+                {
+                    DepthFirstRecursive(neighborNode, visited);
+                }
+            }
+
+
+        }
+
+        public class Edge
+        {
+            public Node Node { get; set; }
+            public int Weight { get; set; }
+
+            public Edge(Node node, int weight)
+            {
+                Node = node;
+                Weight = weight;
+            }
+            public Edge(Node node)
+            {
+                Node = node;
+            }
+        }
     }
-
-    public class Edge
-    {
-        public Node Node { get; set; }
-        public int Weight { get; set; }
-
-        public Edge(Node node, int weight)
-        {
-            Node = node;
-            Weight = weight;
-        }
-        public Edge(Node node)
-        {
-            Node = node;
-        }
-    }  
 }

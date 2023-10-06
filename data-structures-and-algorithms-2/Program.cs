@@ -1,4 +1,6 @@
-﻿namespace data_structures_and_algorithms_2
+﻿using System.Xml.Linq;
+
+namespace data_structures_and_algorithms_2
 {
     internal class Program
     {
@@ -23,23 +25,32 @@
             graph.AddEdge(node5, node3, 9);
             graph.AddEdge(node1, node2, 2);
 
-            foreach (var item in graph.GetNodes())
+            //foreach (var item in graph.GetNodes())
+            //{
+            //    Console.WriteLine(item.value);
+            //}
+            //string s = "";
+            //foreach (var item in graph.GetNeighbors(node3))
+            //{
+            //    s += item.Node.value + ", ";
+            //}
+            //Console.WriteLine(s);
+            //Console.WriteLine(graph.Size());
+            //foreach (var item in graph.BreadthFirst(node3))
+            //{
+            //    Console.WriteLine(item.value);
+            //}
+
+            //Console.WriteLine(Graph.BusinessTrip(graph, new string[] { "A", "E" }));
+            Console.WriteLine("Depth-First Traversal:");
+            List<Node> dfsResult = graph.DepthFirst(node1);
+
+            foreach (Node node in dfsResult)
             {
-                Console.WriteLine(item.value);
-            }
-            string s = "";
-            foreach (var item in graph.GetNeighbors(node3))
-            {
-                s += item.Node.value + ", ";
-            }
-            Console.WriteLine(s);
-            Console.WriteLine(graph.Size());
-            foreach (var item in graph.BreadthFirst(node3))
-            {
-                Console.WriteLine(item.value);
+                Console.Write(node.value + " ");
             }
 
-            Console.WriteLine(Graph.BusinessTrip(graph, new string[] { "A", "E" }));
+            Console.WriteLine();
         }
     }
 }
